@@ -41,6 +41,8 @@ module.exports = ({
       external = Array.from(new Set(opts.external.concat(ids)));
     }
 
-    return Object.assign({}, opts, { external });
-  },
+    return Object.assign({}, opts, { external: (id) => {
+      // console.log('id', id);
+      return external.some(x => x == id || id.startsWith(x + '/'));
+    } });  },
 });
