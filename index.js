@@ -22,6 +22,10 @@ module.exports = ({
       ids = ids.concat(Object.keys(pkg.peerDependencies));
     }
 
+    if (devDependencies && pkg.devDependencies) {
+      ids = ids.concat(Object.keys(pkg.devDependencies));
+    }
+
     if (builtins) {
       ids = ids.concat(getBuiltins(semver.valid(builtins)));
     }
