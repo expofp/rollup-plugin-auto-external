@@ -8,6 +8,7 @@ module.exports = ({
   dependencies = true,
   packagePath,
   peerDependencies = true,
+  devDependencies = false,
 } = {}) => ({
   name: 'auto-external',
   options(opts) {
